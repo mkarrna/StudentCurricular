@@ -1,0 +1,75 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Add Student</title>  <link rel="stylesheet" href="view.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript"> function n()
+            {
+                window.location="client170471.html"
+            }
+        
+        </script> <link rel="stylesheet" href="tablecss.css"><link rel="stylesheet" href="butt-2.css">
+</head>  
+<body> 
+    <div class="col-md-12">
+	<h3 align="center">VISITING REQUEST</h3>
+	<div ng-app="st_app" ng-controller="st_controller">
+            <div class="col-md-6">
+                <center> <table><tr><th><label>RollNo</label></th><td>
+                            <input type="text" name="rollno" ng-model="rollno" class="form-control"></td></tr>
+                <br/>
+                <tr><th><label> enter the visitor Name</label></th><td>
+                <input type="text" name="name" ng-model="name" class="form-control"></td></tr>
+                <br/>
+                <tr><th><label>enter the visiting date </label></th><td>
+                <input type="date" name="vdate" ng-model="vdate" class="form-control"></td></tr>
+                <br/><br/>
+                <tr><th><label>enter the visiting time</label></th><td>
+                <input type="time" name="vtime" ng-model="vtime" class="form-control"></td></tr>
+                
+                        
+                <br/>
+                
+                <tr > <td>          <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="SEND"></td><TD> <button  onclick="n()" class="example_e">BACK MENU</button> </TD></tr></table>
+                </center></div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+        if ($scope.rollno == null) {
+            alert("Enter Your RollNo");
+        } else if ($scope.name == null) {
+            alert("Enter Your Name");
+        } else if ($scope.vdate == null) {
+            alert("enter the date");
+        } else if ($scope.vtime == null) {
+            alert("enter the time");
+       
+        } else {
+            $http.post(
+                "insert_v.php", {
+                    'rollno': $scope.rollno,
+                    'name': $scope.name,
+                    'vdate': $scope.vdate,
+                    'vtime': $scope.vtime,
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+                $scope.rollno = null;
+                $scope.name = null;
+                $scope.vdate = null;
+                $scope.vtime = null;
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

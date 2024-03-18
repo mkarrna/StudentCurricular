@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+   
+<head>
+<meta charset="UTF-8"> 
+<title>Add Student</title>  
+ <link rel="stylesheet" href="view.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<link rel="stylesheet" href="tablecss.css"><link rel="stylesheet" href="butt-2.css">
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="viewstud_library.html"
+            }
+            </script>
+                     <style> 
+                             body{
+                              background-image: url(image/i1.jpg);
+                               background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+                         } 
+                         input {
+border: none;
+background: #404040;
+
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+        input:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}</style>
+</head>  
+<a href="add_library.html"></a>
+<body > 
+    <div class="col-md-12"><div ><br><br>
+            </B><h1 align="center">ADD LIBRARY DETAIL OF THE STUDENT</h1></B>
+	<div ng-app="st_app" ng-controller="st_controller">
+                <center><TABLE><tr>
+                 <th><label>RollNo</label></th><td> <select ng-model="rollno" class="form-control" ng-init="drop2()">
+               <option ng-repeat="x in drop2">{{x.rollno}}</option></select></td></tr>
+                 <th><label>Book Number</label></th><td><input type="text" name="bn" ng-model="bn"  class="w3-input w3-border" ></td></tr>
+                 <th><label>borrowed date</label></th><td><input type="date" name="bd" ng-model="bd"  class="w3-input w3-border" ></td></tr>               
+                 <th><label>Return date</label></th><td><input type="date" name="rd" ng-model="rd"  class="w3-input w3-border" ></td></tr>
+                <tr><td> <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="Insert"></td>
+                <td> <button  onclick="ins()" class="example_e">
+                            BACK MENU
+            </button></td></tr>       
+                        
+                        </table></div><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+     $scope.drop2=function(){
+        $http.get('dropdown1.php')
+                .success(function(data){
+        $scope.drop2=data;
+    });
+    }
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+        if ($scope.rollno == null) {
+            alert("Enter Your RollNo");
+        } else if ($scope.bn == null) {
+            alert("Enter book number");
+        } else if ($scope.bd == null) {
+            alert("Select borrowed date");
+          
+            
+        } else {
+            $http.post(
+                "insert_lib1.php", {
+                    'rollno': $scope.rollno,
+                    'bn': $scope.bn,
+                    'bd': $scope.bd,
+                    'rd':$scope.rd,
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+                $scope.rollno = null;
+                $scope.bn = null;
+                $scope.bd = null;
+                $scope.rd = null;
+               
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>
+
+

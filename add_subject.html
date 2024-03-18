@@ -1,0 +1,143 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Add Student</title>  
+ <link rel="stylesheet" href="view.css">
+ <<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<link rel="stylesheet" href="tablecss.css"><link rel="stylesheet" href="butt-2.css">
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="subject_management.html"
+            }
+            </script>
+                     <style> 
+                             body{
+                              background-image: url(image/i3.jpg);
+                               background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+                         } 
+                         input {
+border: none;
+background: #404040;
+
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+        input:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}</style>
+</head>  
+<body> 
+    <div class="col-md-12"><div><br><br>
+            <h1 align="center"><B>ADD COURSE SUBJECTS</B></h1>
+	<div ng-app="st_app" ng-controller="st_controller">
+                <center><div> <TABLE><tr>
+                
+              <tr><th> <label>Semester</label></th><td>
+                <select ng-model="sc" class="form-control">
+                    <option value="I">First
+                    <option value="II">Second
+                    <option value="III">Third
+                    <option value="IV">fourth
+                     <option value="V">fifth
+                     <option value="VI">sixth     
+                </select></td></tr>
+                <br/>
+                <tr><th><label>Course</label></th><td>
+                <select ng-model="co" class="form-control">
+                    <option value="BCOM">BCOM
+                    <option value="BSC">BSC
+                    <option value="BCA">BCA
+                    <option value="BBM">BBM
+                    <option value="BA">BA
+                </select></td></tr>
+                <br/>
+                 <th><label>Subject</label></th><td><input type="text" name="s1" ng-model="s1"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s2" ng-model="s2"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s3" ng-model="s3"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s4" ng-model="s4"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s5" ng-model="s5"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s6" ng-model="s6"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s7" ng-model="s7"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s8" ng-model="s8"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s9" ng-model="s9"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+                <th><label>Subject</label></th><td><input type="text" name="s10" ng-model="s10"  class="w3-input w3-border" placeholder="enter the subject"></td></tr>
+              
+               
+                <tr><td> <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="Insert"></td>
+                <td> <button  onclick="ins()" class="example_e">
+                            BACK MENU
+            </button></td></tr>       
+                        
+                        </table></div><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+         if ($scope.sc == null) {
+            alert("Select Class");
+        } else if ($scope.co == null) {
+            alert("Select Course");
+        } else if ($scope.s1 == null) {
+            alert("enter the subject");
+        } else {
+            $http.post(
+                "insert_subject.php", {
+                   'sid': $scope.sid,
+                    'sc': $scope.sc,
+                    'co': $scope.co,
+                    's': $scope.s,
+                     's1': $scope.s1,
+                     's2': $scope.s2,
+                     's3': $scope.s3,
+                     's4': $scope.s4,
+                     's5': $scope.s5,
+                     's6': $scope.s6,
+                     's7': $scope.s7,
+                     's8': $scope.s8,
+                     's9': $scope.s9,
+                     's10': $scope.s10,
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+                $scope.sid = sid;
+       
+        $scope.sc = sc;
+        $scope.co = co;
+        $scope.s1 = s1;
+        $scope.s2 = s2;
+         $scope.s3 = s3;
+         $scope.s4 = s4;
+         $scope.s5 = s5;
+         $scope.s6 = s6;
+         $scope.s7 = s7;
+         $scope.s8 = s8;
+         $scope.s9 = s9;
+         $scope.s10 = s10;
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

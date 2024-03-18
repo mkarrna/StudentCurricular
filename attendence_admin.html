@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head> <link rel="stylesheet" href="view.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="view.js"></script>
+       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+    <style>
+        body
+{
+    padding: 0px;
+    margin: 0px;
+    background-position: center;
+    font-family: sans-serif;
+    font-size: 5;
+     background: url(image/college.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     
+}
+H2{
+    color: white;
+}
+img{
+    background-size: 10px,10px;
+}
+b
+{
+    color:red;
+}
+th{
+    background-color:lightgray;
+}
+    </style>
+  <title>Menu</title>
+   <link rel="stylesheet" href="style1.css">
+</head>
+
+<body ng-app=""><center>
+    <h1><b>WELLCOME TO BHANDARKARS' COLLEGE </b></h1>
+    <br><br><br>
+    <form name="f1" method="POST" action="libstud.php">
+       <br> 
+    <div class="menu">
+        <li class="item" id="students1">
+        <a ng-href="#students1" class="btn">I YEAR ATTENDANCE</a>
+        <div class="smenu">
+	  <a ng-href="attendence-1sem.html">I SEM ATTENDANCE</a>
+          <a ng-href="attendence-2sem.html" >II SEM ATTENDANCE</a>
+         </div>
+      </li>
+      <li class="item" id="students">
+        <a ng-href="#students" class="btn">II YEAR ATTENDANCE</a>
+        <div class="smenu">
+	  <a ng-href="attendence-3sem.html">III SEM ATTENDANCE</a>
+          <a ng-href="attendence-4sem.html" >IV SEM ATTENDANCE</a>
+         </div>
+      </li>
+      <li class="item" id="notice">
+        <a ng-href="#notice" class="btn">III YEAR ATTENDANCE</a>
+        <div class="smenu">
+        <a ng-href="attendence-5sem.html"  >V SEM ATTENDANCE</a>
+          <a ng-href="attendence-6sem.html" >VI SEM ATTENDANCE</a>
+        </div>
+      </li>     
+    </div></center><BR> <BR> <BR> <BR> 
+     <MARQUEE scrollamount="15"><H2>WELLCOME TO BHANDARKARS' ARTS & SCIENCE COLLEGE, YOU GET MORE INFORMATION OF COLLEGE TO VISIT COLLEGE WEB SITE LIKE basck1963@rediffmail.com OR principal@basck.org</H2></MARQUEE>
+      
+</body>
+
+</html>

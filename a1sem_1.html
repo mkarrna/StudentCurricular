@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+         <style>
+            body{
+    margin:0;
+    padding: 0;
+    font-family: 'Lato' , san-serif;
+    font-size: 16px;
+    background-image: url(../1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+}
+.ul{
+    float: right;
+}
+.nav{
+    width: 100%;
+    background-color: rgba(450,0,60,8);
+    color:#fff;
+}
+.menu{
+    line-height: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav .menu .menu_item{
+    display: inline-block;
+    position: relative;
+}
+.menu_item:hover{
+    background-color: #2c3e50;
+}
+.nav .menu .menu_item a{
+    padding: 12px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+.submenu{
+    text-transform: none;
+    display: none;
+    position: absolute;
+    width: 220px;
+    background-color: rgba(0,0,0,0.8);
+}
+.menu_item:hover .submenu{
+    display: block;
+}
+.submenu_item{
+    border-left: 4px solid transparent;
+    
+}
+.submenu_item:hover{
+    background-color: rgba(0,0,0,0.6);
+    border-left: 4px solid rgba(450,0,60,0.8);
+    
+}
+
+    
+        </style>
+    </head>
+    <body><div class="nav1"><CENTER><H1><B>WELCOME TO BHANDARKARS' COLLEGE ADMIN PAGE </B></H1><br><br><br><br></div>
+        
+        <nav class="nav">
+            <ul class="menu">
+               
+                <li class="menu_item"><a href="#">BASIC </a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="basic_bca1a.html">BASIC INFORMATION</a></li>
+                     </ul></li>
+               <li class="menu_item"><a href="#">MARKS</a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="m1sem.html">1SEM</a></li>
+                         <li class="submenu_item"><a href="m2sem.html">2SEM</a></li>
+                         
+                     </ul></li>
+                <li class="menu_item"><a href="leave_year1.html">LEAVE</a></li>
+           
+                <li class="menu_item"><a href="#">ATTENDANCE</a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="a1sem.html">1SEM</a></li>
+                         <li class="submenu_item"><a href="a2sem.html">2SEM</a></li>
+                         
+                     </ul></li>
+                
+                <li class="menu_item"><a href="v_mgtad.html">VISITING MANAGEMENT</a></li>
+                     <li class="menu_item"><a href="login.html">LOGOUT -></a></li>
+            </ul>
+        </nav>
+            </CENTER> <div class="body">
+        
+<html>
+    <head>
+        <title>View Student</title>
+         <link rel="stylesheet" href="view.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="view.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            function ins()
+            {
+                window.location="ex_a1_1sem.html"
+            }
+            function mn()
+            {
+                window.location="year1.html"
+            }
+             function n()
+            {
+                window.location="add_a1.html"
+            }
+            </script><link rel="stylesheet" href="butt-2.css">
+            <link rel="stylesheet" href="tablecss.css">
+        
+    </head>
+    <body>
+<br><br><br>
+    <div class="container" ng-app="st_app" ng-controller="st_controller" ng-init="show_data()">
+    <h3 align="center">I SEMESTER ATTENDANCE DETAIL IN MONTH VISE</h3>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">RollNo</span>
+                        <input type="text" name="search_query" ng-model="search_query" ng-keyup="show_data()" placeholder="Search by RollNo" class="form-control" />
+                    </div> 
+                </div>
+               
+               
+            </div>
+        </div>
+        <br />
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+            <label>RollNo</label>
+            <input type="text" name="rollno" ng-model="rollno" class="form-control" readonly>
+                <br/>
+                
+                    <label>course</label>
+            <input type="text" name="co" ng-model="co" class="form-control" readonly>
+                <br/>
+                
+            <label>section</label>
+            <input type="text" name="sec" ng-model="sec" class="form-control" readonly>
+                <br/>    
+                    
+                
+                
+             <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s1" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s1}}</option></select>
+               </td></tr>    
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac1" ng-model="ac1"  class="w3-input w3-border"  placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s2" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s2}}</option></select>
+               </td></tr> 
+               <tr><th>  <label>attended classes</label></th><td>
+                <input type="number" name="ac2" ng-model="ac2"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s3" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s3}}</option></select>
+               </td></tr> 
+                
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac3" ng-model="ac3"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+              <tr><th>    <label>subject</label></th><td>
+                          <select ng-model="s4" class="form-control" ng-init="drop3()">
+                          <option ng-repeat="x in drop3">{{x.s4}}</option></select>
+               </td></tr> 
+                 <tr><th><label>attended classes</label></th><td>
+                <input type="number" name="ac4" ng-model="ac4"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+                 <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s5" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s5}}</option></select>
+               </td></tr>    
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac5" ng-model="ac5"  class="w3-input w3-border"  placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s6" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s6}}</option></select>
+               </td></tr> 
+               <tr><th>  <label>attended classes</label></th><td>
+                <input type="number" name="ac6" ng-model="ac6"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s7" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s7}}</option></select>
+               </td></tr> 
+                
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac7" ng-model="ac7"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+              <tr><th>    <label>subject</label></th><td>
+                          <select ng-model="s8" class="form-control" ng-init="drop3()">
+                          <option ng-repeat="x in drop3">{{x.s8}}</option></select>
+               </td></tr> 
+                 <tr><th><label>attended classes</label></th><td>
+                <input type="number" name="ac8" ng-model="ac8"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+                
+         
+                
+                
+                
+                
+                
+               <input type="submit" name="update" class="btn btn-primary" ng-click="insert()" value="{{btnName}}" data-dismiss="modal">
+            </div>
+            </div>
+            </div>
+        </div>
+        <div>
+        <table class="table table-striped table-bordered">
+                <tr>
+                    <th>RollNo</th>
+                     <th>Course</th>
+                      <th>section</th>
+                    <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                    
+                   
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr ng-repeat="x in student">
+                    <td>{{x.rollno}}</td>
+                      <td>{{x.co}}</td>
+                      <td>{{x.sec}}</td>
+                    <td>{{x.s1}}</td>
+                    <td>{{x.ac1}}</td>
+                    <td>{{x.s2}}</td>
+                    <td>{{x.ac2}}</td>
+                    <td>{{x.s3}}</td>
+                    <td>{{x.ac3}}</td>
+                    <td>{{x.s4}}</td>
+                    <td>{{x.ac4}}</td>
+                    <td>{{x.s5}}</td>
+                    <td>{{x.ac5}}</td>
+                    <td>{{x.s6}}</td>
+                    <td>{{x.ac6}}</td>
+                    <td>{{x.s7}}</td>
+                    <td>{{x.ac7}}</td>
+                    <td>{{x.s8}}</td>
+                    <td>{{x.ac8}}</td>
+                    <td>{{x.s9}}</td>
+                    <td>{{x.ac9}}</td>
+                    <td>{{x.s10}}</td>
+                    <td>{{x.ac10}}</td>
+                    
+                   
+                    <td>
+                        <button class="btn btn-success btn-xs" ng-click="update_data(x.rollno,x.co,x.sec, x.junc1, x.ac11, x.julyc1, x.ac21, x.augc1, x.ac31, x.sepc1, x.ac41)" data-toggle="modal" data-target="#exampleModal">
+                            <span class="glyphicon glyphicon-edit"></span> Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-xs" ng-click="delete_data(x.rollno )">
+                            <span class="glyphicon glyphicon-trash"></span> Delete
+                        </button>
+                    </td>
+                    
+                </tr>
+        </table>
+           
+           <PRE><B>
+                             <button  onclick="ins()" class="example_e">IMPORT</button>               <button  onclick="mn()" class="example_e">MAIN MENU</button>              <button  onclick="n()" class="example_e">ADD NEW RECORD</button>
+              </B></PRE> 
+                   
+        </div>
+    </div>
+  
+    </body></div></body>
+
+<script>
+    var app = angular.module('st_app', []);
+    app.controller('st_controller', function($scope, $http){
+        $scope.drop3=function(){
+        $http.get('subject_a.php')
+                .success(function(data){
+        $scope.drop3=data;
+    });
+    }
+    $scope.insert = function() {
+        if ($scope.rollno == null) {
+            alert("Enter Your RollNo");
+        } else if ($scope.junc1 == null) {
+            alert("Enter Your Name");
+        } else if ($scope.ac11 == null) {
+            alert("Select Gender");
+        } else if ($scope.julyc1 == null) {
+            alert("Enter Your dob");
+        } else if ($scope.ac21 == null) {
+            alert("Enter Your address");
+        } else if ($scope.augc1 == null) {
+            alert("Enter Your phone number");    
+        } else if ($scope.ac31 == null) {
+            alert("Select Class");
+        } else if ($scope.sepc1 == null) {
+            alert("Select Course");
+        } else if ($scope.ac41 == null) {
+            alert("Select Section");
+        } else {
+            $http.post(
+                "insert_a1_bca1a.php", {
+                    'rollno': $scope.rollno,
+             
+                    'junc1': $scope.junc1,
+                    'ac11': $scope.ac11,
+                     'julyc1': $scope.julyc1,
+                      'ac21': $scope.ac21,
+                       'augc1': $scope.augc1,
+                    'ac31': $scope.ac31,
+                    'sepc1': $scope.sepc1,
+                    'ac41': $scope.ac41,
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                setTimeout(function(){ alert(data); },300);
+                $scope.show_data();
+            });
+        }
+    }
+    $scope.update_data = function(rollno,co,sec, junc1,ac11,julyc1,ac21,augc1,ac31,sepc1,ac41) {
+        $scope.rollno = rollno;
+        $scope.co =co;
+        
+         $scope.sec =sec;
+        $scope.junc1 = junc1;
+        $scope.ac11 = ac11;
+        $scope.julyc1 = julyc1;
+        $scope.ac21 = ac21;
+        $scope.augc1 = augc1;
+        $scope.ac31 = ac31;
+        $scope.sepc1 = sepc1;
+        $scope.ac41 = ac41;
+        $scope.btnName = "Update";
+    }
+    $scope.delete_data = function(rollno) {
+        if (confirm("Are you sure you want to delete?")) {
+            $http.post("delete_a1.php", {
+                    'rollno': rollno
+                })
+                .success(function(data) {
+                    alert(data);
+                    $scope.show_data();
+                });
+        } else {
+            return false;
+        }
+    }
+    $scope.show_data = function(){
+    $http({
+        method:"POST",
+        url:"display_a1_bca1a.php",
+        data:{search_query:$scope.search_query}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data2 = function(){
+    $http({
+        method:"POST",
+        url:"display_a1_bca1a.php",
+        data:{search_query2:$scope.search_query2}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data3 = function(){
+    $http({
+        method:"POST",
+        url:"display_a1_bca1a.php",
+        data:{search_query3:$scope.search_query3}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data4 = function(){
+    $http({
+        method:"POST",
+        url:"display_a1_bca1a.php",
+        data:{search_query4:$scope.search_query4}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+});
+</script>
+
+</html>

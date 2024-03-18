@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+         <style>
+            body{
+    margin:0;
+    padding: 0;
+    font-family: 'Lato' , san-serif;
+    font-size: 16px;
+    background-image: url(image/BCK.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+}
+.ul{
+    float: right; 
+}
+.nav{
+    width: 100%;
+    background-color: rgba(450,0,60,8);
+    color:#fff;
+}
+.menu{
+    line-height: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav .menu .menu_item{
+    display: inline-block;
+    position: relative;
+}
+.menu_item:hover{
+    background-color: #2c3e50;
+}
+.nav .menu .menu_item a{
+    z-index: 100;
+    padding: 12px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+.submenu{
+    text-transform: none;
+    display: none;
+    position: absolute;
+    width: 220px;
+    background-color: rgba(0,0,0,0.8);
+}
+.menu_item:hover .submenu{
+    display: block;
+}
+.submenu_item{
+    border-left: 4px solid transparent;
+    
+}
+.submenu_item:hover{
+    background-color: rgba(0,0,0,0.6);
+    border-left: 4px solid rgba(450,0,60,0.8);
+    
+}
+a,li,ul,nav{
+    z-index: 16;
+}
+
+    
+        </style> 
+          <style>
+           
+body {
+	background: #310404 url(image/hd.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Barlow', sans-serif;
+}
+.container {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+a {
+	text-decoration: none;
+}
+h1.main, p.demos {
+	-webkit-animation-delay: 18s;
+	-moz-animation-delay: 18s;
+	-ms-animation-delay: 18s;
+	animation-delay: 18s;
+}
+.sp-container {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: -webkit-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+	background: -moz-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+	background: -ms-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+	background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+}
+.sp-content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 1000;
+}
+.sp-container h2 {
+	position: absolute;
+	top: 10%;
+	line-height: 100px;
+	height: 90px;
+	margin-top: -50px;
+	font-size: 50px;
+	width: 100%;
+	text-align: center;
+	color: transparent;
+	-webkit-animation: blurFadeInOut 3s ease-in backwards;
+	-moz-animation: blurFadeInOut 3s ease-in backwards;
+	-ms-animation: blurFadeInOut 3s ease-in backwards;
+	animation: blurFadeInOut 3s ease-in backwards;
+}
+
+.sp-container h2.frame-5 {
+	-webkit-animation: 1s;
+	-moz-animation: 1s;
+	-ms-animation: 1s;
+	animation: 1s;
+	color: transparent;
+	text-shadow: 0px 0px 1px #fff;
+}
+.sp-container h2.frame-5 span {
+	-webkit-animation: blurFadeIn 3s ease-in 0s backwards;
+	-moz-animation: blurFadeIn 1s ease-in 0s backwards;
+	-ms-animation: blurFadeIn 3s ease-in 0s backwards;
+	animation: blurFadeIn 3s ease-in 0s backwards;
+	color: transparent;
+	text-shadow: 0px 0px 1px #fff;
+}
+.sp-container h2.frame-5 span:nth-child(2) {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	-ms-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+.sp-container h2.frame-5 span:nth-child(3) {
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.sp-globe {
+	position: absolute;
+	width: 282px;
+	height: 273px;
+	left: 50%;
+	top: 50%;
+	margin: -137px 0 0 -141px;
+	background: transparent url(http://web-sonick.zz.mu/images/sl/globe.png) no-repeat top left;
+	-webkit-animation: fadeInBack 3.6s linear 14s backwards;
+	-moz-animation: fadeInBack 3.6s linear 14s backwards;
+	-ms-animation: fadeInBack 3.6s linear 14s backwards;
+	animation: fadeInBack 3.6s linear 14s backwards;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+	-webkit-transform: scale(5);
+	-moz-transform: scale(5);
+	-o-transform: scale(5);
+	-ms-transform: scale(5);
+	transform: scale(5);
+}
+.sp-circle-link {
+	position: absolute;
+        z-index: 100;
+        top : 100px;
+	left: 50%;
+	bottom: 100px;
+	margin-left:-100px;
+	text-align: center;
+	line-height: 140px;
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	color: #3f1616;
+	font-size: 25px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-animation: fadeInRotate 1s linear 2s backwards;
+	-moz-animation: fadeInRotate 1s linear 2s backwards;
+	-ms-animation: fadeInRotate 1s linear 2s backwards;
+	animation: fadeInRotate 1s linear 2s backwards;
+	-webkit-transform: scale(1) rotate(0deg);
+	-moz-transform: scale(1) rotate(0deg);
+	-o-transform: scale(1) rotate(0deg);
+	-ms-transform: scale(1) rotate(0deg);
+	transform: scale(1) rotate(0deg);
+}
+.sp-circle-link:hover {
+	background: #85373b;
+	color: #fff;
+}
+/**/
+
+@-webkit-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-webkit-transform: scale(0);
+	}
+}
+@-webkit-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		-webkit-transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+}
+@-webkit-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-webkit-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-webkit-transform: scale(5);
+	}
+}
+@-webkit-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@-moz-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-moz-transform: scale(0);
+	}
+}
+@-moz-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+}
+@-moz-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-moz-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-moz-transform: scale(5);
+	}
+}
+@-moz-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		transform: scale(0);
+	}
+}
+@keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+}
+@keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		transform: scale(5);
+	}
+}
+@keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) rotate(0deg);
+	}
+}
+</style>
+<style>
+  table {  
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-collapse: collapse; 
+        margin:80px auto;
+	}
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+        th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+        td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+        </style>
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="logo.css" rel="stylesheet" />
+      
+    </head>
+    <body><div ><a href="adminpage.html"><img  class="sp-circle-link" src="image/bcklogo.jpg" class="avatar"></a></div><br><br><br>
+    
+    
+    <CENTER><div class="nav1"><H1><B><div class="sp-container">
+		<h2 class="frame-5">
+			<span>BHANDARKARS'</span>
+		<span>ARTS & SCIENCE</span>
+                <span>COLLEGE KUNDAPURA</span></h2>
+		<div class="frame-1">
+               
+		
+	</div> </B></H1><br><br><br><br></div>
+        <br><br><br><br>
+        <nav class="nav" >
+            <ul class="menu">
+                  
+                <li class="menu_item"><a href="#">BASIC </a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="basic_3sem.html">BASIC INFORMATION</a></li>
+                     </ul></li>
+               <li class="menu_item"><a href="#">MARKS</a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="m5sem.html">5SEM</a></li>
+                         <li class="submenu_item"><a href="m6sem.html">6SEM</a></li>
+                         
+                     </ul></li>
+                <li class="menu_item"><a href="leave_year3.html">LEAVE</a></li>
+           
+                <li class="menu_item"><a href="#">ATTENDANCE</a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="a5sem.html">5SEM</a></li>
+                         <li class="submenu_item"><a href="a6sem.html">6SEM</a></li>
+                         
+                     </ul></li>
+                
+                <li class="menu_item"><a href="v_mgt3.html">VISITING MANAGEMENT</a></li>
+                     <li class="menu_item"><a href="login.html">LOGOUT -></a></li>
+            </ul>
+        </nav>
+            </CENTER> <div class="body">
+    
+<html>
+    <head>
+        <title>View Student</title>
+        <link rel="stylesheet" href="view.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="view.js"></script>
+       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            function ins()
+            {
+                window.location="ex_m6.html"
+            }
+            function mn()
+            {
+                window.location="year3.html"
+            }
+            function n()
+            {
+                window.location="ad_m6.html"
+            }
+            
+        </script><link rel="stylesheet" href="butt-2.css"><link rel="stylesheet" href="tablecss.css">
+    </head>
+    <body>
+
+    <div class="container" ng-app="st_app" ng-controller="st_controller" ng-init="show_data()">
+    <h3 align="center">VI SEMESTER MARKS DETAIL IN SUBJECT VISE</h3>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">RollNo</span>
+                        <input type="text" name="search_query" ng-model="search_query" ng-keyup="show_data()" placeholder="Search by RollNo" class="form-control" />
+                    </div> 
+                </div>
+               
+                
+               
+            </div>
+        </div>
+        <br />
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+            <label>MID</label>
+            <input type="text" name="mid" ng-model="mid" class="form-control" readonly>
+                
+            <label>RollNo</label>
+            <input type="text" name="rollno" ng-model="rollno" class="form-control" readonly>
+                <br/>
+                <label>exam_type</label>
+                 <input type="text" name="exam_type" ng-model="exam_type" class="form-control" readonly>
+                                        
+                 <label>course</label>
+                <input type="text" name="co" ng-model="co" class="form-control" readonly>
+                <br/>
+                
+                 <label>class</label>
+                <input type="text" name="sec" ng-model="sec" class="form-control" readonly>
+                <br/>
+                
+                <label>subject</label>
+                          <select ng-model="s1" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s1}}</option></select>
+            
+                <label>scored marks</label>
+                <input type="text" name="sc1" ng-model="sc1" class="form-control">
+                
+               <label>subject</label>
+                          <select ng-model="s2" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s2}}</option></select>
+            
+                <label>scored marks</label>
+                <input type="text" name="sc2" ng-model="sc2" class="form-control">
+                
+                <label>subject</label>
+                          <select ng-model="s3" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s3}}</option></select>
+            
+                
+                <label>scored marks</label>
+                <a href="m1sem.html"></a>
+                <input type="text" name="sc3" ng-model="sc3" class="form-control">
+                
+                <label>subject</label>
+                          <select ng-model="s4" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s4}}</option></select>
+            
+                
+                <label>scored marks</label>
+                <input type="text" name="sc4" ng-model="sc4" class="form-control">
+                
+               <label>subject</label>
+                          <select ng-model="s5" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s5}}</option></select>
+            
+                
+                <label>scored marks</label>
+                <input type="text" name="sc5" ng-model="sc5" class="form-control">
+                
+                <label>subject</label>
+                          <select ng-model="s6" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s6}}</option></select>
+            
+                
+                <label>scored marks</label>
+                <input type="text" name="sc6" ng-model="sc6" class="form-control">
+                
+                 <label>subject</label>
+                          <select ng-model="s7" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s7}}</option></select>
+            
+                
+                <label>scored marks</label>
+                <input type="text" name="sc7" ng-model="sc7" class="form-control">
+                
+               <label>subject</label>
+                          <select ng-model="s8" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s8}}</option></select>
+            
+                <label>scored marks</label>
+                <input type="text" name="sc8" ng-model="sc8" class="form-control">
+                
+               <label>subject</label>
+                          <select ng-model="s9" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s9}}</option></select>
+            
+                
+                <label>scored marks</label>
+                <input type="text" name="sc9" ng-model="sc9" class="form-control">
+                
+                <label>subject</label>
+                          <select ng-model="s10" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s10}}</option></select>
+            
+                
+                <label>scored marks</label>
+                <input type="text" name="sc10" ng-model="sc10" class="form-control">
+                
+                
+             <br/>
+                
+                
+               <input type="submit" name="update" class="btn btn-primary" ng-click="insert()" value="{{btnName}}" data-dismiss="modal">
+            </div>
+            </div>
+            </div>
+        </div>
+        <div>
+          <table class="table table-striped table-bordered" ng-repeat="x in student">
+              
+                <tr>
+                    <th><button class="example_e"><font size="2px">RollNo</th>
+                     <th><button class="example_e"><font size="2px">exam_type</th>
+                       <th><button class="example_e"><font size="2px">Semester</th>
+                        <th><button class="example_e"><font size="2px">Course</th>
+                      <th><button class="example_e"><font size="2px">section</th>
+                    <th><button class="example_e"><font size="2px">subject</th>
+                    <th><button class="example_e"><font size="2px">scored marks</th>
+                      <th><button class="example_e"><font size="2px">subject</th>
+                    <th><button class="example_e"><font size="2px">scored marks</th>
+                    
+                    
+                   
+                     </tr>
+                <tr>
+                    <th rowspan="7"><input type="hidden" name="mid" ng-model="mid"  value='{{x.mid}}' readonly>
+                     {{x.rollno}}</th>
+                    <th rowspan="7">{{x.exam_type}}</th>
+                      <th rowspan="7">{{x.sc}}</th>
+                      <th rowspan="7">{{x.co}}</th>
+                      <th rowspan="7">{{x.sec}}</th></tr>
+                      <tr>
+                    <th>{{x.s1}}</th>
+                    <th>{{x.sc1}}</th>
+                    <th>{{x.s2}}</th>
+                    <th>{{x.sc2}}</th></tr>
+                      <tr>
+                    <th>{{x.s3}}</th>
+                    <th>{{x.sc3}}</th>
+                    <th>{{x.s4}}</th>
+                    <th>{{x.sc4}}</th></tr>
+                      <tr>
+                    <th>{{x.s5}}</th>
+                    <th>{{x.sc5}}</th>
+                    <th>{{x.s6}}</th>
+                    <th>{{x.sc6}}</th></tr>
+                      <tr>
+                    <th>{{x.s7}}</th>
+                    <th>{{x.sc7}}</th>
+                    <th>{{x.s8}}</th>
+                    <th>{{x.sc8}}</th></tr>
+                      <tr>
+                    <th>{{x.s9}}</th>
+                    <th>{{x.sc9}}</th>
+                    <th>{{x.s10}}</th>
+                    <th>{{x.sc10}}</th></tr>
+                      <tr>
+                    
+                   
+                    <th colspan="2">
+                        <button class="btn btn-success btn-xs" ng-click="update_data(x.mid,x.rollno,x.exam_type,x.co,x.sec, x.s1, x.sc1, x.s2, x.sc2, x.s3, x.sc3, x.s4, x.sc4, x.s5, x.sc5, x.s6, x.sc6, x.s7, x.sc7, x.s8, x.sc8, x.s9, x.sc9, x.s10, x.sc10 )" data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fa fa-pencil-square" aria-hidden="true">    Edit</i>
+                       </button>
+                    </th>
+                    <th colspan="2">
+                        <button class="btn btn-danger btn-xs" ng-click="delete_data(x.mid )">
+                      <i class="fa fa-trash" aria-hidden="true"> Delete</i>
+                         </button>
+                    </th>
+                    
+                </tr>
+        </table>
+           
+           <PRE><B>
+                             <button  onclick="ins()" class="example_e">IMPORT</button>               <button  onclick="mn()" class="example_e">MAIN MENU</button>              <button  onclick="n()" class="example_e">ADD NEW RECORD</button>
+              </B></PRE> 
+                   
+        </div>
+    </div>
+  
+    </body></div></body>
+
+<script>
+    var app = angular.module('st_app', []);
+    app.controller('st_controller', function($scope, $http){
+        $scope.drop3=function(){
+        $http.get('subject_a6.php')
+                .success(function(data){
+        $scope.drop3=data;
+    });
+    }
+     $scope.drop4=function(){
+        $http.get('exam.php')
+                .success(function(data){
+        $scope.drop4=data;
+    });
+    }
+    $scope.insert = function() {
+        if ($scope.rollno == null) {
+            alert("Enter Your RollNo");
+        } else if ($scope.s1 == null) {
+            alert("select subject");
+        } else if ($scope.sc1 == null) {
+            alert("enter the marks");
+      
+        } else {
+            $http.post(
+                "insert_m6_bca1a.php", {
+                    'mid': $scope.mid,
+                    'rollno': $scope.rollno,
+                    'exam_type':$scope.exam_type,
+                    's1': $scope.s1,
+                    'sc1': $scope.sc1,
+                    's2': $scope.s2,
+                    'sc2': $scope.sc2,
+                    's3': $scope.s3,
+                    'sc3': $scope.sc3,
+                    's4': $scope.s4,
+                    'sc4': $scope.sc4,
+                    's5': $scope.s5,
+                    'sc5': $scope.sc5,
+                    's6': $scope.s6,
+                    'sc6': $scope.sc6,
+                    's7': $scope.s7,
+                    'sc7': $scope.sc7,
+                    's8': $scope.s8,
+                    'sc8': $scope.sc8,
+                    's9': $scope.s9,
+                    'sc9': $scope.sc9,
+                    's10': $scope.s10,
+                    'sc10': $scope.sc10,
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                setTimeout(function(){ alert(data); },300);
+                $scope.show_data();
+            });
+        }
+    }
+    $scope.update_data = function(mid,rollno,exam_type,co,sec,s1,sc1,s2,sc2,s3,sc3,s4,sc4,s5,sc5,s6,sc6,s7,sc7,s8,sc8,s9,sc9,s10,sc10) {
+      $scope.mid = mid;
+      $scope.rollno = rollno;
+        $scope.exam_type = exam_type;
+         $scope.co = co;
+          $scope.sec = sec;
+        $scope.s1 = s1;
+        $scope.sc1 = sc1;
+        $scope.s2 = s2;
+        $scope.sc2 = sc2;
+         $scope.s3 = s3;
+        $scope.sc3 = sc3;
+         $scope.s4 = s4;
+        $scope.sc4 = sc4;
+         $scope.s5 = s5;
+        $scope.sc5 = sc5;
+         $scope.s6 = s6;
+        $scope.sc6 = sc6;
+         $scope.s7 = s7;
+        $scope.sc7 = sc7;
+         $scope.s8 = s8;
+        $scope.sc8 = sc8;
+         $scope.s9 = s9;
+        $scope.sc9 = sc9;
+         $scope.s10 = s10;
+        $scope.sc10 = sc10;
+        $scope.btnName = "Update";
+    }
+    $scope.delete_data = function(mid) {
+        if (confirm("Are you sure you want to delete?")) {
+            $http.post("delete_m1.php", {
+                    'mid': mid
+                })
+                .success(function(data) {
+                    alert(data);
+                    $scope.show_data();
+                });
+        } else {
+            return false;
+        }
+    }
+    $scope.show_data = function(){
+    $http({
+        method:"POST",
+        url:"display_m6_bca1a.php",
+        data:{search_query:$scope.search_query}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data2 = function(){
+    $http({
+        method:"POST",
+        url:"display_m6_bca1a.php",
+        data:{search_query2:$scope.search_query2}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data3 = function(){
+    $http({
+        method:"POST",
+        url:"display_m6_bca1a.php",
+        data:{search_query3:$scope.search_query3}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data4 = function(){
+    $http({
+        method:"POST",
+        url:"display_m6_bca1a.php",
+        data:{search_query4:$scope.search_query4}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+});
+</script>
+
+</html>

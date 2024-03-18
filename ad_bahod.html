@@ -1,0 +1,104 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>add dept notice</title>  
+ <link rel="stylesheet" href="view.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<link rel="stylesheet" href="tablecss.css"><link rel="stylesheet" href="butt-2.css">
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="hod.html"
+            }
+            </script>
+                     <style> 
+                           body{
+                              background-image: url(image/i1.jpg);
+                               background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+
+                         input {
+border: none;
+background: #404040;
+
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+        input:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}</style>
+</head>  
+<body > 
+    <div class="col-md-12">
+        <div ><h1 align="center"><B>INSERTING DEPARTMENT NOTICE</h1></B>
+	<div ng-app="st_app" ng-controller="st_controller">
+                            <div> <TABLE align="center">
+                                
+                
+                   
+                <tr><th><label>Add date</label></th><td><input type="date" name="ad_date" ng-model="ad_date"  class="w3-input w3-border" class="form-control"></td></tr>               
+                <tr> <th><label>notice</label></th><td><textarea cols="100" rows="20" name="notice" ng-model="notice"  class="w3-input w3-border" class="form-control" placeholder="enter the notice" > </textarea></td></tr>
+              <tr> <th><label>remove date</label></th><td><input type="date" name="rem_date" ng-model="rem_date" class="w3-input w3-border"  class="form-control"></td></tr>  
+
+                  
+                 <tr><td> <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="Insert"></td>
+                 <td> <button  onclick="ins()" class="example_e">
+                            BACK MENU
+            </button></td></tr>       
+                        
+                        </table></div><br><br><br><br><br></div>
+            </div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+         
+          if ($scope.ad_date == null) {
+            alert("Enter ad_date");
+            
+        } else if ($scope.notice == null) {
+            alert("enter notice");
+            } else if ($scope.rem_date == null) {
+            alert("enter the remove date");
+            
+        } else {
+            $http.post(
+                "insert_hod.php", {
+                    'dept': $scope.dept,
+                    'ad_date': $scope.ad_date,
+                    'notice': $scope.notice,
+                    'rem_date':$scope.rem_date,
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+                $scope.dept = null;
+                $scope.ad_date = null;
+                $scope.notice = null;
+                $scope.rem_date = null;
+               
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

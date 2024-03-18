@@ -1,0 +1,234 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Add Student</title>  
+ <link rel="stylesheet" href="view.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<link rel="stylesheet" href="table1css.css"><link rel="stylesheet" href="butt-2.css">
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="a2sem.html"
+            }
+            </script>
+ <style> 
+                             body{
+                              background-image: url(image/i1.jpg);
+                               background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+                         } 
+                         input {
+border: none;
+background: #404040;
+
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+        input:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}</style>
+</head>  
+<body > 
+    <div class="col-md-12"><div ><br><br>
+            <h1 align="center"><B>ADD 2SEM ATTENDANCE OF THE STUDENTS</B></h1>
+	<div ng-app="st_app" ng-controller="st_controller">
+                        <center> <TABLE>
+                 <tr><th>  <label>RollNo</label></th><td>
+           <select ng-model="rollno" class="form-control" ng-init="drop2()">
+               <option ng-repeat="x in drop2">{{x.rollno}}</option></select></td></tr>
+                 
+                  <tr><th> <label>month</label></th><td>
+                  
+                          <select ng-model="month" class="form-control" ng-init="drop4()">
+                            <option ng-repeat="x in drop4">{{x.months}}</option></select>
+                 </td></tr>
+          
+           <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s1" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s1}}</option></select>
+               </td></tr>    
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac1" ng-model="ac1"  class="w3-input w3-border"  placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s2" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s2}}</option></select>
+               </td></tr> 
+               <tr><th>  <label>attended classes</label></th><td>
+                <input type="number" name="ac2" ng-model="ac2"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s3" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s3}}</option></select>
+               </td></tr> 
+                
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac3" ng-model="ac3"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+              <tr><th>    <label>subject</label></th><td>
+                          <select ng-model="s4" class="form-control" ng-init="drop3()">
+                          <option ng-repeat="x in drop3">{{x.s4}}</option></select>
+               </td></tr> 
+                 <tr><th><label>attended classes</label></th><td>
+                <input type="number" name="ac4" ng-model="ac4"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+                 <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s5" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s5}}</option></select>
+               </td></tr>    
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac5" ng-model="ac5"  class="w3-input w3-border"  placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s6" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s6}}</option></select>
+               </td></tr> 
+               <tr><th>  <label>attended classes</label></th><td>
+                <input type="number" name="ac6" ng-model="ac6"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+               <tr><th> <label>subject</label></th><td>
+                          <select ng-model="s7" class="form-control" ng-init="drop3()">
+                            <option ng-repeat="x in drop3">{{x.s7}}</option></select>
+               </td></tr> 
+                
+               <tr><th> <label>attended classes</label></th><td>
+                <input type="number" name="ac7" ng-model="ac7"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+              <tr><th>    <label>subject</label></th><td>
+                          <select ng-model="s8" class="form-control" ng-init="drop3()">
+                          <option ng-repeat="x in drop3">{{x.s8}}</option></select>
+               </td></tr> 
+                 <tr><th><label>attended classes</label></th><td>
+                <input type="number" name="ac8" ng-model="ac8"  class="w3-input w3-border" placeholder="enter attended class"></td></tr>
+                <br/>
+                
+         
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <tr><td> <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="Insert"></td>
+                 <td> <button  onclick="ins()" class="example_e">
+                            BACK MENU
+                            <a href="add_a1.html"></a>
+            </button></td></tr>       
+                        
+                        </table></div><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+    $scope.drop2=function(){
+        $http.get('attendence_rollno1.php')
+                .success(function(data){
+        $scope.drop2=data;
+    });
+    }
+     $scope.drop3=function(){
+        $http.get('subject_a2.php')
+                .success(function(data){
+        $scope.drop3=data;
+    });
+    }
+      $scope.drop4=function(){
+        $http.get('month_a2.php')
+                .success(function(data){
+        $scope.drop4=data;
+    });
+    }
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+         
+         if ($scope.rollno == null) {
+            alert("enter the rollnumber");
+        
+            
+        } else {
+            $http.post(
+                "insert_a2_bca1a.php", {
+                   'rollno': $scope.rollno,
+                   'month':$scope.month,
+                    's1': $scope.s1,
+                    'ac1': $scope.ac1,
+                    's2': $scope.s2,
+                    'ac2': $scope.ac2,
+                    's3': $scope.s3,
+                    'ac3': $scope.ac3,
+                    's4': $scope.s4,
+                    'ac4': $scope.ac4,
+                    's5': $scope.s5,
+                    'ac5': $scope.ac5,
+                    's6': $scope.s6,
+                    'ac6': $scope.ac6,
+                    's7': $scope.s7,
+                    'ac7': $scope.ac7,
+                    's8': $scope.s8,
+                    'ac8': $scope.ac8,
+                    's9': $scope.s9,
+                    'ac9': $scope.ac9,
+                    's10': $scope.s10,
+                    'ac10': $scope.ac10,
+                    
+                    
+                    
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+        $scope.rollno = rollno;
+        $scope.month = month;
+        $scope.s1 = s1;
+        $scope.ac1 = ac1;
+        $scope.s2 = s2;
+        $scope.ac2 = ac2;
+         $scope.s3 = s3;
+        $scope.ac3 = ac3;
+         $scope.s4 = s4;
+        $scope.ac4 = ac4;
+         $scope.s5 = s5;
+        $scope.ac5 = ac5;
+         $scope.s6 = s6;
+        $scope.ac6 = ac6;
+         $scope.s7 = s7;
+        $scope.ac7 = ac7;
+         $scope.s8 = s8;
+        $scope.ac8 = ac8;
+         $scope.s9 = s9;
+        $scope.ac9 = ac9;
+         $scope.s10 = s10;
+        $scope.ac10 = ac10;
+        
+        
+        
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

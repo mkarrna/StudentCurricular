@@ -1,0 +1,133 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Add Student</title>  
+ <link rel="stylesheet" href="view.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<link rel="stylesheet" href="tablecss.css"><link rel="stylesheet" href="butt-2.css">
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="basic_2sem.html"
+            }
+            </script>
+       <style> 
+                             body{
+                              background-image: url(image/i2.jpg);
+                               background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+                         } 
+                         input {
+border: none;
+background: #404040;
+
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+        input:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}</style>
+</head>  
+<body > 
+    <div class="col-md-12">
+        <div ><h1 align="center"><B>Add Student</B></h1>
+	<div ng-app="st_app" ng-controller="st_controller">
+                            <center> <TABLE><tr>
+                    <tr><th>  <label>RollNo</label></th><td>
+           <select ng-model="rollno" class="form-control" ng-init="drop2()">
+               <option ng-repeat="x in drop2">{{x.rollno}}</option></select></td></tr>
+      
+                            <tr><th><label>Name</label></th><td><input type="text" name="name" ng-model="name" class="form-control" placeholder="enter student name"><tr><th><label>Gender</label>
+               
+                            </th><td><input type="radio" name="gender" ng-model="gender" ng-value='"Male"'>Male
+                              <input type="radio" name="gender" ng-model="gender" ng-value='"Female"'>Female</td></tr>
+                
+                 <tr><th><label>date of birth</label></th><td>
+                <input type="date" name="dob" ng-model="dob" class="w3-input w3-border"  class="form-control" placeholder="enter the date of birth"></td></tr>
+                <br/>
+                 <tr><th><label>Address</label></th><td>
+                <input type="text" name="address" ng-model="address"  class="w3-input w3-border" class="form-control" placeholder="enter the address" ></td></tr>
+                <br/>
+                 <tr><th><label>Phone number</label></th><td>
+                <input type="phonenumber" name="pn" ng-model="pn"  class="w3-input w3-border" class="form-control" placeholder="phone number"></td></tr>
+                <br/>
+              
+              
+               
+                
+                 <tr><td> <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="Insert"></td>
+                 <td> <button  onclick="ins()" class="example_e">
+                            BACK MENU
+            </button></td></tr>       
+                        
+                        </table></div><br><br><br><br><br></div>
+            </div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+    $scope.drop2=function(){
+        $http.get('basic_rollno.php')
+                .success(function(data){
+        $scope.drop2=data;
+    });
+    }
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+        if ($scope.rollno == null) {
+            alert("Enter Your RollNo");
+        } else if ($scope.name == null) {
+            alert("Enter Your Name");
+        } else if ($scope.gender == null) {
+            alert("Select Gender");
+            } else if ($scope.dob == null) {
+            alert("Select date");
+            } else if ($scope.address == null) {
+            alert("enter address");
+            } else if ($scope.pn == null) {
+            alert("enter phone number");
+       
+        } else {
+            $http.post(
+                "insert_b_bca1a.php", {
+                    'rollno': $scope.rollno,
+                    'name': $scope.name,
+                    'gender': $scope.gender,
+                    'dob':$scope.dob,
+                    'address':$scope.address,
+                    'pn':$scope.pn,
+                    
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+                $scope.rollno = null;
+                $scope.name = null;
+                $scope.gender = null;
+                $scope.dob = null;
+                $scope.address = null;
+                $scope.pn = null;
+               
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

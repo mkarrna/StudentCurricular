@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Student</title>
+        <link rel="stylesheet" href="view.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="view.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+    </head>
+    <body>
+
+    <div class="container" ng-app="st_app" ng-controller="st_controller" ng-init="show_data()">
+    <h3 align="center">COLLEGE NOTICE BOARD</h3>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">ROLL NUMBER</span>
+                        <input type="text" name="search_query" ng-model="search_query" ng-keyup="show_data()" placeholder="Search by RollNo" class="form-control" />
+                    </div> 
+                </div>
+                <div class="form-group col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">BOOK NUMBER</span>
+                        <input type="text" name="search_query" ng-model="search_query" ng-keyup="show_data1()" placeholder="Search by RollNo" class="form-control" />
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <br />
+      
+        <div>
+        <table class="table table-striped table-bordered">
+                <tr>
+                    <th>ROLL NUMBER</th>
+                    <th>BOOK NUMBER</th>
+                    <th>BORROWED DATE</th>
+                    <th>RETURN DATE</th>
+                    
+                    
+                    <th>Delete</th>
+                </tr>
+                <tr ng-repeat="x in student">
+                    <td>{{x.rollno}}</td>
+                    <td>{{x.bn}}</td>
+                    <td>{{x.bd}}</td>
+                    <td>{{x.rd}}</td>
+                   
+                   
+                    <td>
+                        <button class="btn btn-danger btn-xs" ng-click="delete_data(x.rollno )">
+                            <span class="glyphicon glyphicon-trash"></span> Delete
+                        </button>
+                    </td>
+                    
+                </tr>
+        </table>
+           
+                        <input  type="file" class="btn btn-danger btn-xs" ng-click="insert_data(x.rollno )">
+                            <span class="glyphicon glyphicon-trash"></span> INSERT
+                            </input>
+                   
+        </div>
+    </div>
+  
+ </body>
+
+<script>
+    var app = angular.module('st_app', []);
+    app.controller('st_controller', function($scope, $http){
+    $scope.insert = function() {
+        if ($scope.nno == null) {
+            alert("Enter Your notice No");
+         } else {
+            $http.post(
+                "insert_liba.php", {
+                    'rollno': $scope.rollno,
+                    'bn': $scope.bn,
+                    'bd': $scope.bd,
+                    'rd': $scope.rd,
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                setTimeout(function(){ alert(data); },300);
+                $scope.show_data();
+            });
+        }
+    }
+    
+    $scope.delete_data = function(rollno) {
+        if (confirm("Are you sure you want to delete?")) {
+            $http.post("delete_liba.php", {
+                    'nno': nno
+                })
+                .success(function(data) {
+                    alert(data);
+                    $scope.show_data();
+                });
+        } else {
+            return false;
+        }
+    }
+    
+    $scope.show_data = function(){
+    $http({
+        method:"POST",
+        url:"display_liba.php",
+        data:{search_query:$scope.search_query}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    
+    $scope.show_data1 = function(){
+    $http({
+        method:"POST",
+        url:"display_liba.php",
+        data:{search_query2:$scope.search_query2}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    
+});
+</script>
+
+</html>

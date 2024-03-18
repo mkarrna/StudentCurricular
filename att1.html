@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Student</title>
+         <link rel="stylesheet" href="view.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="view.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            function ins()
+            {
+                window.location="exlimpo.html"
+            }
+        </script>
+    </head>
+    <body>
+
+    <div class="container" ng-app="st_app" ng-controller="st_controller" ng-init="show_data()">
+    <h3 align="center">View Student</h3>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">RollNo</span>
+                        <input type="text" name="search_query" ng-model="search_query" ng-keyup="show_data()" placeholder="Search by RollNo" class="form-control" />
+                    </div> 
+                </div>
+                <div class="form-group col-md-3">  
+                    <div class="input-group">
+                        <span class="input-group-addon">Class</span>
+                        <input type="text" name="search_query2" ng-model="search_query2" ng-keyup="show_data2()" placeholder="Search by Class" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">  
+                    <div class="input-group">
+                        <span class="input-group-addon">Course</span>
+                        <input type="text" name="search_query3" ng-model="search_query3" ng-keyup="show_data3()" placeholder="Search by Course" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3"> 
+                    <div class="input-group">
+                        <span class="input-group-addon">Section</span>
+                        <input type="text" name="search_query4" ng-model="search_query4" ng-keyup="show_data4()" placeholder="Search by Section" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <label>RollNo</label>
+                <input type="text" name="rollno" ng-model="rollno" class="form-control" readonly>
+                <br/>
+                <label>june class</label>
+               <input type="text" name="junc1" ng-model="junc1" class="form-control">
+                <br/>
+                <label>attended classes</label>
+                <input type="text" name="ac11" ng-model="ac11" class="form-control">
+                <br/>
+                <label>july class</label>
+               <input type="text" name="julyc1" ng-model="julyc1" class="form-control">
+                <br/>
+                <label>attended classes</label>
+                <input type="text" name="ac21" ng-model="ac21" class="form-control">
+                <br/>
+                <label>august class</label>
+               <input type="text" name="augc1" ng-model="augc1" class="form-control">
+                <br/>
+                <label>attended classes</label>
+                <input type="text" name="ac31" ng-model="ac31" class="form-control">
+                <br/>
+                <label>september class</label>
+               <input type="text" name="sepc1" ng-model="sepc1" class="form-control">
+                <br/>
+                <label>attended classes</label>
+                <input type="text" name="ac41" ng-model="ac41" class="form-control">
+                <br/>
+                <input type="submit" name="update" class="btn btn-primary" ng-click="insert()" value="{{btnName}}" data-dismiss="modal">
+            </div>
+            </div>
+            </div>
+        </div>
+        <div>
+        <table class="table table-striped table-bordered">
+                <tr>
+                     <th>RollNo</th>
+                   
+                    <th>june classes</th>
+                    <th>attended classes</th>
+                    <th>july classes</th>
+                    <th>attended classes</th>
+                    <th>august classes</th>
+                    <th>attended classes</th>
+                    <th>september classes</th>
+                    <th>attended classes</th>
+                   
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr ng-repeat="x in student">
+                    <td>{{x.rollno}}</td>
+                    <td>{{x.junc1}}</td>
+                    <td>{{x.ac11}}</td>
+                    <td>{{x.julyc1}}</td>
+                    <td>{{x.ac21}}</td>
+                    <td>{{x.augc1}}</td>
+                    <td>{{x.ac31}}</td>
+                    <td>{{x.sepc1}}</td>
+                    <td>{{x.ac41}}</td>
+                   
+                    <td>
+                        <button class="btn btn-success btn-xs" ng-click="update_data(rollno, junc1, ac11, julyc1, ac21, augc1, ac31, sepc1, ac41)" data-toggle="modal" data-target="#exampleModal">
+                            <span class="glyphicon glyphicon-edit"></span> Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-xs" ng-click="delete_data(x.rollno )">
+                            <span class="glyphicon glyphicon-trash"></span> Delete
+                        </button>
+                    </td>
+                    
+                </tr>
+        </table>
+           
+                        <button  onclick="ins()">
+                            <span class="glyphicon glyphicon-trash"></span> INSERT
+                            </button>
+                   
+        </div>
+    </div>
+  
+ </body>
+
+<script>
+    var app = angular.module('st_app', []);
+    app.controller('st_controller', function($scope, $http){
+    $scope.insert = function() {
+  if ($scope.rollno == null) {
+            alert("Enter Your RollNo");
+        } else if ($scope.junc1 == null) {
+            alert("Enter Your Name");
+        } else if ($scope.ac11 == null) {
+            alert("Select Gender");
+        } else if ($scope.julyc1 == null) {
+            alert("Enter Your dob");
+        } else if ($scope.ac21 == null) {
+            alert("Enter Your address");
+        } else if ($scope.augc1 == null) {
+            alert("Enter Your phone number");    
+        } else if ($scope.ac31 == null) {
+            alert("Select Class");
+        } else if ($scope.sepc1 == null) {
+            alert("Select Course");
+        } else if ($scope.ac41 == null) {
+            alert("Select Section");
+        } else {
+            $http.post("inserta1.php", {
+                   'rollno': $scope.rollno,
+                    'junc1': $scope.junc1,
+                    'ac11': $scope.ac11,
+                    'julyc1': $scope.julyc1,
+                    'ac21': $scope.ac21,
+                     'augc1': $scope.augc1,
+                    'ac31': $scope.ac31,
+                    'sepc1': $scope.sepc1,
+                    'ac41': $scope.ac41,
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                setTimeout(function(){ alert(data); },300);
+                $scope.show_data();
+            });
+        }
+    };
+    $scope.update_data = function(rollno, junc1, ac11, julyc1, ac21, augc1, ac31, sepc1, ac41) {
+        $scope.rollno=rollno;
+        $scope.junc1 = junc1;
+        $scope.ac11 = ac11;
+        $scope.julyc1 = julyc1;
+        $scope.ac21 = ac21;
+        $scope.augc1 = augc1;
+        $scope.ac31 = ac31;
+        $scope.sepc1 = sepc1;
+        $scope.ac41 = ac41;
+        $scope.btnName = "Update";
+    };
+    $scope.delete_data = function(rollno) {
+        if (confirm("Are you sure you want to delete?")) {
+            $http.post("delete_at1.php", {
+                    'rollno': rollno
+                })
+                .success(function(data) {
+                    alert(data);
+                    $scope.show_data();
+                });
+        } else {
+            return false;
+        }
+    }
+    $scope.show_data = function(){
+    $http({
+        method:"POST",
+        url:"display_at1.php",
+        data:{search_query:$scope.search_query}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data2 = function(){
+    $http({
+        method:"POST",
+        url:"display_at1.php",
+        data:{search_query2:$scope.search_query2}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data3 = function(){
+    $http({
+        method:"POST",
+        url:"display_at1.php",
+        data:{search_query3:$scope.search_query3}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data4 = function(){
+    $http({
+        method:"POST",
+        url:"display_at1.php",
+        data:{search_query4:$scope.search_query4}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+});
+</script>
+
+</html>

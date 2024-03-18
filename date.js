@@ -1,0 +1,1 @@
+$scope.ModifiedDate = $filter("date")(Date.now(), 'yyyy-MM-dd');

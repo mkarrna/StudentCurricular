@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+        <style>
+  table {  
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-collapse: collapse; 
+        margin:80px auto;
+	}
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+        th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+        td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+        </style>
+         <style>
+            body{
+    margin:0;
+    padding: 0;
+    font-family: 'Lato' , san-serif;
+    font-size: 16px;
+    background-image: url(image/BCK.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+}
+.ul{
+    float: right; 
+}
+.nav{
+    width: 100%;
+    background-color: rgba(450,0,60,8);
+    color:#fff;
+}
+.menu{
+    line-height: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav .menu .menu_item{
+    display: inline-block;
+    position: relative;
+}
+.menu_item:hover{
+    background-color: #2c3e50;
+}
+.nav .menu .menu_item a{
+    z-index: 100;
+    padding: 12px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+.submenu{
+    text-transform: none;
+    display: none;
+    position: absolute;
+    width: 220px;
+    background-color: rgba(0,0,0,0.8);
+}
+.menu_item:hover .submenu{
+    display: block;
+}
+.submenu_item{
+    border-left: 4px solid transparent;
+    
+}
+.submenu_item:hover{
+    background-color: rgba(0,0,0,0.6);
+    border-left: 4px solid rgba(450,0,60,0.8);
+    
+}
+a,li,ul{
+    z-index: 16;
+}
+
+    
+        </style> 
+          <style>
+           
+body {
+	background: #310404 url(image/hd.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Barlow', sans-serif;
+}
+.container {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+a {
+	text-decoration: none;
+}
+h1.main, p.demos {
+	-webkit-animation-delay: 18s;
+	-moz-animation-delay: 18s;
+	-ms-animation-delay: 18s;
+	animation-delay: 18s;
+}
+.sp-container {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: -webkit-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+	background: -moz-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+	background: -ms-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+	background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+}
+.sp-content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 1000;
+}
+.sp-container h2 {
+	position: absolute;
+	top: 10%;
+	line-height: 100px;
+	height: 90px;
+	margin-top: -50px;
+	font-size: 50px;
+	width: 100%;
+	text-align: center;
+	color: transparent;
+	-webkit-animation: blurFadeInOut 3s ease-in backwards;
+	-moz-animation: blurFadeInOut 3s ease-in backwards;
+	-ms-animation: blurFadeInOut 3s ease-in backwards;
+	animation: blurFadeInOut 3s ease-in backwards;
+}
+
+.sp-container h2.frame-5 {
+	-webkit-animation: 1s;
+	-moz-animation: 1s;
+	-ms-animation: 1s;
+	animation: 1s;
+	color: transparent;
+	text-shadow: 0px 0px 1px #fff;
+}
+.sp-container h2.frame-5 span {
+	-webkit-animation: blurFadeIn 3s ease-in 0s backwards;
+	-moz-animation: blurFadeIn 1s ease-in 0s backwards;
+	-ms-animation: blurFadeIn 3s ease-in 0s backwards;
+	animation: blurFadeIn 3s ease-in 0s backwards;
+	color: transparent;
+	text-shadow: 0px 0px 1px #fff;
+}
+.sp-container h2.frame-5 span:nth-child(2) {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	-ms-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+.sp-container h2.frame-5 span:nth-child(3) {
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.sp-globe {
+	position: absolute;
+	width: 282px;
+	height: 273px;
+	left: 50%;
+	top: 50%;
+	margin: -137px 0 0 -141px;
+	background: transparent url(http://web-sonick.zz.mu/images/sl/globe.png) no-repeat top left;
+	-webkit-animation: fadeInBack 3.6s linear 14s backwards;
+	-moz-animation: fadeInBack 3.6s linear 14s backwards;
+	-ms-animation: fadeInBack 3.6s linear 14s backwards;
+	animation: fadeInBack 3.6s linear 14s backwards;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+	-webkit-transform: scale(5);
+	-moz-transform: scale(5);
+	-o-transform: scale(5);
+	-ms-transform: scale(5);
+	transform: scale(5);
+}
+.sp-circle-link {
+	position: absolute;
+        z-index: 100;
+        top : 100px;
+	left: 50%;
+	bottom: 100px;
+	margin-left:-100px;
+	text-align: center;
+	line-height: 140px;
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	color: #3f1616;
+	font-size: 25px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-animation: fadeInRotate 1s linear 2s backwards;
+	-moz-animation: fadeInRotate 1s linear 2s backwards;
+	-ms-animation: fadeInRotate 1s linear 2s backwards;
+	animation: fadeInRotate 1s linear 2s backwards;
+	-webkit-transform: scale(1) rotate(0deg);
+	-moz-transform: scale(1) rotate(0deg);
+	-o-transform: scale(1) rotate(0deg);
+	-ms-transform: scale(1) rotate(0deg);
+	transform: scale(1) rotate(0deg);
+}
+.sp-circle-link:hover {
+	background: #85373b;
+	color: #fff;
+}
+/**/
+
+@-webkit-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-webkit-transform: scale(0);
+	}
+}
+@-webkit-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		-webkit-transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+}
+@-webkit-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-webkit-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-webkit-transform: scale(5);
+	}
+}
+@-webkit-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@-moz-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-moz-transform: scale(0);
+	}
+}
+@-moz-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+}
+@-moz-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-moz-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-moz-transform: scale(5);
+	}
+}
+@-moz-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		transform: scale(0);
+	}
+}
+@keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+}
+@keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		transform: scale(5);
+	}
+}
+@keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) rotate(0deg);
+	}
+}
+        </style>
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="logo.css" rel="stylesheet" />
+      
+     </head>
+    <body><div ><a href="adminpage.html"><img  class="sp-circle-link" src="image/bcklogo.jpg" class="avatar"></a></div><br><br><br>
+    
+    
+    <CENTER><div class="nav1"><H1><B><div class="sp-container">
+		<h2 class="frame-5">
+			<span>BHANDARKARS'</span>
+		<span>ARTS & SCIENCE</span>
+                <span>COLLEGE KUNDAPURA</span></h2>
+		<div class="frame-1">
+               
+		
+	</div> </B></H1><br><br><br><br></div>
+        <br><br><br><br>
+        <nav class="nav">
+            <ul class="menu">
+               
+                     <li class="menu_item"><a href="viewstud.html">BASIC DETAILS</a></li>
+                     
+             <li class="menu_item"><a href="marksadmin.html">MARKS</a> </li>
+            
+                <li class="menu_item"><a href="viewstud_leave.html">LEAVE</a></li>
+           
+                <li class="menu_item"><a href="attendence_view.html">ATTENDANCE</a></li>
+                     
+                 <li class="menu_item"><a href="#">NOTICE</a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="viewstud_unotice.html">University Notice</a></li>
+                         <li class="submenu_item"><a href="viewstud_cnotice.html">college Notice</a></li>
+                         <li class="submenu_item"><a href="viewstud_dnotice.html">Department Notice</a></li>
+                     </ul></li>
+                <li class="menu_item"><a href="viewstud_library.html">LIBRARY</a></li>
+                <li class="menu_item"><a href="conformation.html">VISITOR CONFORMATION</a></li>
+                    
+                 <li class="menu_item"><a href="#"><i class="fa fa-bars" aria-hidden="true">  Settings </i></a>
+                     <ul class="submenu">
+                         <li class="submenu_item"><a href="subadmin.html">Manage sub admin </a></li>
+                         <li class="submenu_item"><a href="rno_management.html">Manage Roll_Number</a></li>
+                         <li class="submenu_item"><a href="subject_management.html">Manage Subject</a></li>
+                          <li class="submenu_item"><a href="exam_management.html">Manage Exam </a></li>
+                         
+                 
+                 
+                 
+                     </ul></li>
+                
+                     <li class="menu_item"><div style="font-size:24px"><a href="login.html"><i class="fa fa-sign-out" fa-7x aria-hidden="true"></i></div></a>
+                    
+                 
+                  
+                       </ul>
+        </nav>
+         
+        <div class="body">
+    
+<html>
+    <head>
+        <title>View Student</title>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="view.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            function ins()
+            {
+                window.location="export-unotice.html"
+            }
+            function mn()
+            {
+                window.location="adminpage.html"
+            }
+               function n()
+            {
+                window.location="add_un.html"
+            }
+        </script> <link rel="stylesheet" href="butt-2.css"><link rel="stylesheet" href="view.css">
+    </head>
+    <body>
+
+    <div class="container" ng-app="st_app" ng-controller="st_controller" ng-init="show_data()">
+    <h3 align="center">MANAGING UNIVERSITY NOTICE</h3>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">Notice No</span>
+                        <input type="text" name="search_query" ng-model="search_query" ng-keyup="show_data()" placeholder="Search by RollNo" class="form-control" />
+                    </div> 
+                </div>
+                <div class="form-group col-md-3">  
+                    <div class="input-group">
+                        <span class="input-group-addon">added date</span>
+                        <input type="text" name="search_query2" ng-model="search_query2" ng-keyup="show_data2()" placeholder="Search by add date" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">  
+                    <div class="input-group">
+                        <span class="input-group-addon">remove date</span>
+                        <input type="text" name="search_query3" ng-model="search_query3" ng-keyup="show_data3()" placeholder="Search by remove date" class="form-control" />
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <br />
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+            <label>NOTICE No</label>
+            <input type="text" name="notice_no" ng-model="notice_no" class="form-control" readonly>
+                <br/>
+                 <label>NOTICE TYPE</label>
+                <input type="text" name="n_type" ng-model="n_type" class="form-control" readonly>
+                <br/>
+                <label>ADDED DATE</label>
+                <input type="text" name="ad_date" ng-model="ad_date" class="form-control">
+                <br/>
+                <label>notice</label>
+                <input type="text" name="notice" ng-model="notice" class="form-control">
+                <br/>
+                <label>remove date</label>
+                <input type="text" name="rem_date" ng-model="rem_date" class="form-control">
+                <br/>
+               <input type="submit" name="update" class="btn btn-primary" ng-click="insert()" value="{{btnName}}" data-dismiss="modal">
+            </div>
+            </div>
+            </div>
+        </div>
+        <div>
+        <table class="table table-striped table-bordered">
+                <tr>
+                    <th><button class="example_e">notice No</button></th>
+                     <th><button class="example_e">notice type</button></th>
+                   <th><button class="example_e">added date</button></th>
+                    <th><button class="example_e">notice</button></th>
+                    <th><button class="example_e">remove notice</button></th>
+                    
+                   
+                    <th><button class="example_e">Edit</th>
+                    <th><button class="example_e">Delete</th>
+                </tr>
+                <tr ng-repeat="x in student">
+                  <th>{{x.notice_no}}</th>
+                  <th>{{x.n_type}}</th>
+                   <th>{{x.ad_date}}</th>
+                   <th>{{x.notice}}</th>
+                    <th>{{x.rem_date}}</th>
+                   
+                    <th>
+                        <button class="btn btn-success btn-xs" ng-click="update_data(x.notice_no,x.n_type, x.ad_date, x.notice, x.rem_date)" data-toggle="modal" data-target="#exampleModal">
+                              <i class="fa fa-pencil-square" aria-hidden="true">    Edit</i>
+                          
+                        </button>
+                    </th>
+                    <th>
+                        <button class="btn btn-danger btn-xs" ng-click="delete_data(x.notice_no )">
+                      <i class="fa fa-trash" aria-hidden="true"> Delete</i>
+                            </button>
+                    </th>
+                    
+                </tr>
+        </table>
+            <PRE><B>
+                             <button  onclick="ins()" class="example_e">IMPORT</button>               <button  onclick="mn()" class="example_e">MAIN MENU</button>              <button  onclick="n()" class="example_e">ADD NEW RECORD</button>
+              </B></PRE> 
+                   
+                   
+        </div>
+    </div>
+  
+ </body></div></body>
+
+<script>
+    var app = angular.module('st_app', []);
+    app.controller('st_controller', function($scope, $http){
+    $scope.insert = function() {
+        if ($scope.notice_no == null) {
+            alert("Enter notice No");
+        } else if ($scope.ad_date == null) {
+            alert("Enter Your added date");
+        } else if ($scope.notice == null) {
+            alert("enter notice");
+        } else if ($scope.rem_date == null) {
+            alert("Enter remove date");
+        } else {
+            $http.post(
+                "insert_unotice.php", {
+                    'notice_no': $scope.notice_no,
+                    'n_type': $scope.n_type,
+                    'ad_date': $scope.ad_date,
+                    'notice': $scope.notice,
+                     'rem_date': $scope.rem_date,
+                      
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                setTimeout(function(){ alert(data); },300);
+                $scope.show_data();
+            });
+        }
+    }
+    $scope.update_data = function(notice_no,n_type,ad_date, notice,rem_date) {
+        $scope.notice_no = notice_no;
+        $scope.n_type = n_type;
+        $scope.ad_date = ad_date;
+        $scope.notice = notice;
+        $scope.rem_date = rem_date;
+        $scope.btnName = "Update";
+    }
+    $scope.delete_data = function(notice_no) {
+        if (confirm("Are you sure you want to delete?")) {
+            $http.post("delete_unotice.php", {
+                    'notice_no': notice_no
+                })
+                .success(function(data) {
+                    alert(data);
+                    $scope.show_data();
+                });
+        } else {
+            return false;
+        }
+    }
+    $scope.show_data = function(){
+    $http({
+        method:"POST",
+        url:"display_unotice.php",
+        data:{search_query:$scope.search_query}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data2 = function(){
+    $http({
+        method:"POST",
+        url:"display_unotice.php",
+        data:{search_query2:$scope.search_query2}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data3 = function(){
+    $http({
+        method:"POST",
+        url:"display_unotice.php",
+        data:{search_query3:$scope.search_query3}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+    $scope.show_data4 = function(){
+    $http({
+        method:"POST",
+        url:"display_unotice.php",
+        data:{search_query4:$scope.search_query4}
+    })
+    .success(function(data){
+        $scope.student = data;
+    });
+    };
+});
+</script>
+
+</html>

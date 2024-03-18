@@ -1,0 +1,89 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Add Student</title>  
+ <link rel="stylesheet" href="view.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<link rel="stylesheet" href="tablecss.css"><link rel="stylesheet" href="butt-2.css">
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="exam_management.html"
+            }
+            </script>
+                     <style> 
+                         
+                             body{
+                              background-image: url(image/i1.jpg);
+                               background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+                         } 
+                         input {
+border: none;
+background: #404040;
+
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+        input:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}</style>
+</head>  
+<body > 
+    <div class="col-md-12"><div ><br><br>
+            <h1 align="center"><B>Add exam types</B></h1>
+	<div ng-app="st_app" ng-controller="st_controller">
+                <center><div> <TABLE><tr>
+                 <th><label>exam_type</label></th><td><input type="text" name="exam_type" ng-model="exam_type"  class="w3-input w3-border" placeholder="enter rollnumber"></td></tr>
+                
+              
+                
+                <tr><td> <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="Insert"></td>
+                <td> <button  onclick="ins()" class="example_e">
+                            BACK MENU
+            </button></td></tr>       
+                        
+                        </table></div><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+         if ($scope.exam_type == null) {
+            alert("enter exam_type");
+        } else {
+            $http.post(
+                "insert_exam.php", {
+                    
+                    'exam_type': $scope.exam_type,
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+                
+                $scope.exam_type = null;
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

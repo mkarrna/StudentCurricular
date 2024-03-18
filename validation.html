@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head lang="en">
+    <meta charset="utf-8" />
+    <title>Custom AngularJS Validator : date after another date</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-controller="Ctrl">
+    <form name="form">
+      <p>
+        From : 
+        <input type="text" datepicker-popup="dd-MMMM-yyyy" required 
+               ng-model="data.fromDate" name="fromDate"/>
+      </p>
+      <p>
+        To :
+        <input type="text" datepicker-popup="dd-MMMM-yyyy" min="current" required 
+               ng-model="data.toDate" date-after="data.fromDate" name="toDate"/>
+        <span ng-show="form.toDate.$error.dateAfter" class="error">Must be after start date!</span>
+      </p>
+      <p class="error" ng-show="form.$invalid">
+        Form is invalid.
+      </p>
+    </form>
+    {{data}}
+
+  </body>
+
+</html>

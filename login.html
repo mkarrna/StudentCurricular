@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Login</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <link href="style.css" rel="stylesheet" />
+        <style>          body{
+    margin:0;
+    padding: 0;
+    font-family: 'Lato' , san-serif;
+    font-size: 16px;
+    background-image: url(image/BCK.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+}</style>
+             <style>
+            html, body {
+  height: 100%;
+}
+
+.wrap {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 30px;
+  min-height: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 50%);
+  border: none;
+  border-radius: 500px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 500px;
+  min-width: calc(150px + 12px);
+  min-height: calc(40px + 12px);
+  border: 1px solid #00FFCB;
+  box-shadow: 0 0 30px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  50% {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+        </style>
+    </head>
+    <body ng-controller="MainCtrl">
+        <div class="login-box">
+        <img src="image/login.png" class="avatar">
+        <h1>Administrator</h1><br><br>
+        <form name="f" method="POST" action="login2.php">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" name="un" class="question" id="nme" required autocomplete="off" />
+            <label for="nme"><span>Username</span></label><br><br>
+        <i class="fa fa-key icon" aria-hidden="true"></i>
+            <input type="password" name="ps" class="question" id="nme" required autocomplete="off" />
+            <label for="nme"><span>Password</span></label><br><br>
+              <div class="wrap">
+                  <button class="button"> <font size="4px">   LOGIN </font>  </button>
+        </form>
+        </div>
+    </body>
+</html>

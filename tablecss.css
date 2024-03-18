@@ -1,0 +1,30 @@
+
+        table {  
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-collapse: collapse; 
+        margin:80px auto;
+	}
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+        th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+        td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+        th,td{
+            z-index: 100;
+        }
+  
+    
+ 

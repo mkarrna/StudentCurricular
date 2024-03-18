@@ -1,0 +1,131 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Add Student</title>  
+ <link rel="stylesheet" href="view.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<link rel="stylesheet" href="tablecss.css"><link rel="stylesheet" href="butt-2.css">
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="subadmin.html"
+            }
+            </script>
+                     <style> 
+                             body{
+                              background-image: url(image/i3.jpg);
+                               background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        height: 100vh;
+                         } 
+                         input {
+border: none;
+background: #404040;
+
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+        input:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 30px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}</style>
+</head>  
+<body > 
+    <div class="col-md-12"><div ><br><br>
+            <h1 align="center"><B>ADD NEW SUB ADMIN</B></h1>
+	<div ng-app="st_app" ng-controller="st_controller">
+                <center> <TABLE>
+                             <tr><th> <label>username</label></th><td>
+                <input type="text" name="username" ng-model="username"  class="w3-input w3-border" placeholder="enter the username"></td></tr>
+                <tr><th> <label>password</label></th><td>
+                <input type="text" name="password" ng-model="password"  class="w3-input w3-border" placeholder="enter the password"></td></tr>
+               
+                            <tr>
+                                 <th> <label>Class</label></th><td>
+                <select ng-model="sclass" class="form-control">
+                    <option value="I">First
+                    <option value="II">Second
+                    <option value="III">Third
+                </select></td></tr>
+                <br/>
+               <tr><th>  <label>Course</label></th><td>
+                <select ng-model="course" class="form-control">
+                    <option value="BCom">BCom
+                    <option value="BSC">BSC
+                    <option value="BCA">BCA
+                    <option value="BBM">BBM
+                    <option value="BA">BA
+                </select></td></tr>
+                <br/>
+                 <tr><th><label>Section</label></th><td>
+                <select ng-model="section" class="form-control">
+                    <option value="A">A
+                    <option value="B">B
+                         <option value="C">C
+                              <option value="D">D
+                </select></td></tr>
+                <br/>
+                <br/>
+                
+               
+                <tr><td> <input type="submit" name="insert" class="btn btn-primary" ng-click="insert()" value="Insert"></td>
+                <td> <button  onclick="ins()" class="example_e">
+                            BACK MENU
+            </button></td></tr>       
+                        
+                        </table></div><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+<script>  
+var app = angular.module("st_app", []);
+app.controller("st_controller", function($scope, $http) {
+    $scope.btnName = "Insert";//
+    $scope.insert = function() {
+         if ($scope.username == null) {
+            alert("enter the username");
+            } else if ($scope.password == null) {
+            alert("enter password");
+           
+       
+        } else {
+            $http.post(
+                "insert_sadmin.php", {
+                     'username':$scope.username,
+              'password':$scope.password,
+                    'sclass': $scope.sclass,
+                    'course': $scope.course,
+                    'section': $scope.section,
+                   
+                   
+                    
+                    'btnName': $scope.btnName
+                }
+            ).success(function(data) {
+                alert(data);
+                 $scope.username= null;
+                  $scope.password= null;
+                $scope.sclass = null;
+                $scope.course = null;
+                $scope.section = null;
+               
+                
+                
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

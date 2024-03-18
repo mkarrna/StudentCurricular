@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+<script type="text/javascript">
+            function ins()
+            {
+                window.location="a3sem.html"
+            }
+            function mn()
+            {
+                window.location="year2.html"
+            }
+            </script><link rel="stylesheet" href="butt-2.css"> <link rel="stylesheet" href="tablecss.css">
+        
+<script type="text/javascript">
+    var app = angular.module('myApp', ['ngFileUpload'])
+    app.controller('myCtrl', function ($scope, $window, $http) {
+        $scope.SelectFile = function (file) {
+            $scope.SelectedFile = file;
+        };
+        $scope.Upload = function () {
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xls|.xlsx|.csv)$/;
+            if (regex.test($scope.SelectedFile.name.toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    //For Browsers other than IE.
+                    if (reader.readAsBinaryString) {
+                        reader.onload = function (e) {
+                            $scope.ProcessExcel(e.target.result);
+                        };
+                        reader.readAsBinaryString($scope.SelectedFile);
+                    } else {
+                        //For IE Browser.
+                        reader.onload = function (e) {
+                            var data = "";
+                            var bytes = new Uint8Array(e.target.result);
+                            for (var i = 0; i < bytes.byteLength; i++) {
+                                data += String.fromCharCode(bytes[i]);
+                            }
+                            $scope.ProcessExcel(data);
+                        };
+                        reader.readAsArrayBuffer($scope.SelectedFile);
+                    }
+                } else {
+                    $window.alert("This browser does not support HTML5.");
+                }
+            } else {
+                $window.alert("Please upload a valid Excel file.");
+            }
+        };
+ 
+        $scope.ProcessExcel = function (data) {
+            //Read the Excel File data.
+            var workbook = XLSX.read(data, {
+                type: 'binary'
+            });
+ 
+            //Fetch the name of First Sheet.
+            var firstSheet = workbook.SheetNames[0];
+ 
+            //Read all rows from First Sheet into an JSON array.
+            var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
+ 
+            //Display the data from Excel file in Table.
+            $scope.$apply(function () {
+                $scope.Customers = excelRows;
+                $scope.IsVisible = true;
+
+            });
+        };
+        $scope.saveall = function() {
+        $http.post("ex_a3_3sem.php",(JSON.stringify($scope.Customers)));
+        alert("Data Inserted Successfully");
+    };
+    });
+</script>
+<style>
+    table {  
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-collapse: collapse; 
+        margin:80px auto;
+	}
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+        th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+        td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+        [input="text"]{
+            border: hidden;
+        }
+</style>
+    </head>
+    <body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <input type="file" ngf-select="SelectFile($file)" />
+    <input type="button" value="Upload" ng-click="Upload()" />
+    <hr />
+    <table id="tblCustomers" cellpadding="0" cellspacing="0" ng-show="IsVisible">
+        <tr>
+                    <th>RollNo</th>
+                    <th>month</th>
+                    <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+                      <th>subject</th>
+                    <th>attended classes</th>
+        </tr>
+            <tr ng-repeat="m in Customers">
+                <td>{{m.rollno}}</td>
+                    <td>{{m.month}}</td>
+                    <td>{{m.s1}}</td>
+                    <td>{{m.ac1}}</td>
+                    <td>{{m.s2}}</td>
+                    <td>{{m.ac2}}</td>
+                    <td>{{m.s3}}</td>
+                    <td>{{m.ac3}}</td>
+                    <td>{{m.s4}}</td>
+                    <td>{{m.ac4}}</td>
+                    <td>{{m.s5}}</td>
+                    <td>{{m.ac5}}</td>
+                    <td>{{m.s6}}</td>
+                    <td>{{m.ac6}}</td>
+                    <td>{{m.s7}}</td>
+                    <td>{{m.ac7}}</td>
+                    <td>{{m.s8}}</td>
+                    <td>{{m.ac8}}</td>
+                    <td>{{m.s9}}</td>
+                    <td>{{m.ac9}}</td>
+                    <td>{{m.s10}}</td>
+                    <td>{{m.ac10}}</td>
+                    
+            </tr>
+    </table>
+      <button type="button" ng-click="saveall()" class="example_e">Submit</button><BR><BR>
+      <button onclick="ins()" class="example_e">BACK MENU</button><BR><BR><BR>
+      <button onclick="mn()" class="example_e">MAIN MENU</button>
+</div>
+    </body>
+</html>
